@@ -5,7 +5,8 @@ on:
   # - cron: $cron-daily
   # Every 3 minutes
   # - cron: "*/3 * * * *"
-    - cron: "3 * * * *"
+    # The shortest interval you can run scheduled workflows is once every 5 minutes.
+    - cron: "5 * * * *"
 
 # on: [push]
 
