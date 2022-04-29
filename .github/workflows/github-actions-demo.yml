@@ -5,7 +5,7 @@ on:
   # - cron: $cron-daily
   # Every 3 minutes
   # - cron: "*/3 * * * *"
-    - cron: 3 * * * *
+    - cron: "3 * * * *"
 
 # on: [push]
 
