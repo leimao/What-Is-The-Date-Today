@@ -1,0 +1,29 @@
+name: GitHub Self-Updating Repository Demo
+on:
+  # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
+  schedule:
+  # - cron: $cron-daily
+  # Every 5 minutes
+  - cron: "*/5 * * * *"
+
+# on: [push]
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        # https://github.com/actions/checkout/tree/v3.0.2
+        uses: actions/checkout@v3
+      - name: Modify date and time
+        run: |
+          date > README.md
+          cat README.md
+      - name: Push to repository
+        run: |
+          git config --global user.name "Lei Mao"
+          git config --global user.email "leimao@users.noreply.github.com"
+          now=$(date)
+          git add -A
+          git commit -m "Auto Push at $now"
+          git push
