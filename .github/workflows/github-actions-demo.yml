@@ -1,12 +1,12 @@
 name: GitHub Self-Updating Repository Demo
-# on:
-#   # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
-#   schedule:
-#   # - cron: $cron-daily
-#   # Every 5 minutes
-#   - cron: "*/5 * * * *"
+on:
+  # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
+  schedule:
+  # - cron: $cron-daily
+  # Every 3 minutes
+  - cron: "*/3 * * * *"
 
-on: [push]
+# on: [push]
 
 jobs:
   report:
