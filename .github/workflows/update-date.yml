@@ -31,5 +31,5 @@ jobs:
           git config --global user.email "leimao@users.noreply.github.com"
           now=$(date)
           git add -A
-          git commit -m "Auto Push at $now"
+          git commit -m "Auto Push on $now"
           git push
